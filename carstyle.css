@@ -1,0 +1,245 @@
+body{
+	margin: 0;
+	background-color:aeaeae;
+}
+ul {
+    list-style-type: none;
+    margin: 80px 0px 20px 0px;
+    padding: 0px 0px 15px 20px;
+    overflow: hidden;
+    background-color:aeaeae;
+    top:80px;
+	height:30px;
+    width: 100%;
+	border:1px 0px 0px 0px;
+}
+form{
+	padding:10px 10px 0px 0px;
+}
+
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: d3d3d3;
+}
+
+#header{
+	width:100%;
+	height:127px;
+	background-color:d3d3d3;
+	position:fixed;
+	border: 0px 0px 0px 0px;
+	border-color: white;
+}
+#logo{
+	width:30%;
+
+#home{
+	padding:110px 0px 0px 0px;
+	
+}
+
+#viewpet{
+	padding:110px 0px 0px 0px;
+	
+}
+
+#services{
+	padding:110px 0px 0px 0px; 
+}
+#payment{
+	padding:0px 0px 0px 0px; 
+}
+#secondright{
+	float:right;
+	width:40%;
+	font-type:arial;
+}
+#secondleft{
+	float:left;
+	width:52%;
+	margin:0px 0px 0px 50px;
+	padding:0px 10px 0px 0px;
+	text:justify;
+	
+}
+/*This part of CSS is for the registration page*/
+#bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:110px;  
+}
+#right{
+	
+}
+form {
+  position: relative;
+  width: 80%;
+  height:500px;	
+  top:135px;
+  background: rgba(130,130,130,.3);
+ 
+}
+
+form input, form button {
+  width: 212px;
+  border: 1px solid;
+  background-color: #3f898a;
+  background-repeat: no-repeat;
+  padding: 8px 24px 8px 10px;
+  color: ffffff;
+  margin-bottom: 19px; 
+}
+ 
+
+
+//////////////////////////////////
+
+
+li {
+    float: left;
+}
+
+li a, .pets_btn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .drop_down_div:hover .pets_btn {
+    background-color: d3d3d3;
+}
+
+li.drop_down_div {
+    display: inline-block;
+}
+
+.pet_menu {
+    display: none;
+    position: absolute;
+    background-color: d3d3d3;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.pet_menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.pet_menu a:hover {background-color: #f1f1f1}
+
+.drop_down_div:hover .pet_menu {
+    display: block;
+}
+
+#abc
+{
+
+}
+/////////////////////////////////////////////////////////////////////
+#abc {
+width:100%;
+height:100%;
+opacity:.95;
+top:0;
+left:0;
+display:none;
+position:fixed;
+background-color:#313131;
+overflow:auto
+}
+img#close {
+position:absolute;
+right:-14px;
+top:-15px;
+cursor:pointer
+}
+div#popupContact {
+position:absolute;
+left:50%;
+
+margin-left:-200px;
+font-family:'Raleway',sans-serif;
+
+}
+
+form {
+max-width:500px;
+min-width:25px;
+padding:10px 50px;
+border:0px solid gray;
+border-radius: 25px;
+font-family:raleway;
+background-color:#bebebe;
+border: 10px solid #555;
+height: 27em;
+}
+
+h2 {
+background-color:#bebebe;
+padding:20px 3px;
+margin:-10px -50px;
+text-align:center;
+border-radius:10px 10px 0 0
+}
+hr {
+border:0;
+border-top:1px solid #ccc
+}
+
+
+#submit {
+text-decoration:none;
+width:100%;
+text-align:center;
+display:block;
+background-color:#FFBC00;
+color:#fff;
+border:1px solid #FFCB00;
+padding:10px 0;
+font-size:20px;
+cursor:pointer;
+border-radius:5px
+}
+span {
+color:red;
+font-weight:700
+}
+button {
+width:10%;
+height:45px;
+border-radius:3px;
+background-color:#cd853f;
+color:#fff;
+font-family:'Raleway',sans-serif;
+font-size:18px;
+cursor:pointer
+}
+
+form input{
+  width: 212px;
+  border: 1px solid;
+  background-color: ffffff;
+  background-repeat: no-repeat;
+  padding: 8px 24px 8px 10px;
+  color: 555555;
+  margin-bottom: 19px;
+	}
+input[type=text]:focus {
+    border: 1px solid #555;
+}
