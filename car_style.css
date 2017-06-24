@@ -1,0 +1,42 @@
+#top{
+	height:10%;
+	width:100%;
+	background-color:silver;
+	float:left;
+	color:black;
+	font-size:30px;
+	text-align:center;
+}
+#left{
+	height:100%;
+	width:50%;
+	background-color:white;
+	float:left;
+	color:grey;
+	margin-top:20px;
+}
+
+#right{
+	height:100%;
+	width:50%;
+	background-color:silver;
+	float:left;
+	color:grey;
+	margin-top:20px;
+}
+#strip{
+	height:10%;
+	width:100%;
+	background-color:silver;
+	text-align:center;
+	text-decoration: none;
+	color: black;
+}
+
+a{
+	font-size:20px;
+	text-align:left;
+	background-color: silver;
+	text-decoration: none;
+	color:black;
+}

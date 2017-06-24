@@ -1,59 +1,32 @@
-
 <?php
-include "connection.php";
-if(isset($_POST['submit']))
+session_start();
+include_once('../connection.php');
+if(isset($_POST['Register']))
 {
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
-$user_address = $_POST['address'];
-$user_contact = $_POST['contact'];
-$user_name = $_POST['user'];
-$password = $_POST['pass'];
+    $fname=$_POST['fname'];
+    $lname=$_POST['lname'];
+    $add=$_POST['address'];
+    $con=$_POST['contact'];
+    $user=$_POST['username'];
+    $pass=$_POST['password'];
 
-//die(print_r($_POST));
-include "./distance/index.php";
+    $query="insert into user values(null,'$fname', '$lname','$add','$con','$user','$pass')";
+    $in=$conn->query($query);
+    if($in!=0){
+
+        $sql="select * from user where email ='".$user."' and password='".$pass."' ";
+        $res = $conn->query($sql);
+        if($res->num_rows == 1){
+            while($row=$res->fetch_assoc()){
+                $_SESSION['userid']=$row['id'];
+                $_SESSION['username']=$row['fname'];
+
+                header('location:../pages/main.php');
+            }
+        }
 
 
-$sql2 = "select * from user";
-$r = mysqli_query($conn,$sql2);
-$user_list[]=0;
-$pass_id = 0;
-	if (mysqli_num_rows($r)>=1)
-	{
-		$sn=0;
-		while($row = mysqli_fetch_assoc($r))
-		{
-			$user_list[$sn]= $row['user_name'];
-			$sn =$sn +1;
-		}
-	}
-	for($i=0;$i<count($user_list);$i++)
-	{
-	if(($user_list[$i]) == $username)
-	{
-		mysqli_close($conn);
-		die(header('location: register.php?error=user'));
-	}else{
-		mysqli_close($conn);
-		$pass_id = 1;
-			//die(print"bb_close");
-			}
-	
-	}
+    }
 }
 
-if($pass_id == 1)
-{
-			include "connection.php";
-					$query = "insert into user values('','$first_name','$last_name','$user_address','$user_contact','$user_name','$password')";
-					if (!($conn->query($query)))
-					{
-						//die (print"error");
-						header('location:register.php?erroruk=unknown'); //redirection
-					}else{
-						header('location: login.php');
-					
-					}
-	
-}
-?>	
+?>

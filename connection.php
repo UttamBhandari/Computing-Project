@@ -1,11 +1,8 @@
 <?php
-
-$host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "lucy_db";
-
-
-$conn = mysqli_connect($host,$user,$password,$dbname) or die("Could not connect to database");
+$host="localhost";
+$user="root";
+$password="";
+$dbname="assignment";
+$conn=mysqli_connect($host,$user,$password, $dbname) or die("couldnot connect to database");
 
 ?>
