@@ -7,6 +7,6 @@ print_r ($_SESSION);
 //}
 //die(print "error");
 session_destroy();
-header('location: main.php');
+header('location: ./index.php');
 
 ?>

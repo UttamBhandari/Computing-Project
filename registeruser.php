@@ -1,32 +1,59 @@
+
 <?php
-session_start();
-include_once('../connection.php');
-if(isset($_POST['Register']))
+include "connection.php";
+if(isset($_POST['register']))
 {
-    $fname=$_POST['fname'];
-    $lname=$_POST['lname'];
-    $add=$_POST['address'];
-    $con=$_POST['contact'];
-    $user=$_POST['username'];
-    $pass=$_POST['password'];
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+$add = $_POST['address'];
+$cont = $_POST['contact'];
+$username = $_POST['user'];
+$user_password = $_POST['pass'];
 
-    $query="insert into user values(null,'$fname', '$lname','$add','$con','$user','$pass')";
-    $in=$conn->query($query);
-    if($in!=0){
-
-        $sql="select * from user where email ='".$user."' and password='".$pass."' ";
-        $res = $conn->query($sql);
-        if($res->num_rows == 1){
-            while($row=$res->fetch_assoc()){
-                $_SESSION['userid']=$row['id'];
-                $_SESSION['username']=$row['fname'];
-
-                header('location:../pages/main.php');
-            }
-        }
+//die(print_r($_POST));
+include "./distance/index.php";
 
 
-    }
+$sql2 = "select * from user";
+$r = mysqli_query($conn,$sql2);
+$user_list[]=0;
+$pass_id = 0;
+	if (mysqli_num_rows($r)>=1)
+	{
+		$sn=0;
+		while($row = mysqli_fetch_assoc($r))
+		{
+			$user_list[$sn]= $row['user_name'];
+			$sn =$sn +1;
+		}
+	}
+	for($i=0;$i<count($user_list);$i++)
+	{
+	if(($user_list[$i]) == $username)
+	{
+		mysqli_close($conn);
+		die(header('location: login.php?error=user'));
+	}else{
+		mysqli_close($conn);
+		$pass_id = 1;
+			//die(print"bb_close");
+			}
+	
+	}
 }
 
-?>
+if($pass_id == 1)
+{
+			include "connection.php";
+					$query = "insert into user values('','$fname','$lname','$add','$cont','$user_password','$username','$a')";
+					if (!($conn->query($query)))
+					{
+						//die (print"error");
+						header('location:login.php?erroruk=unknown'); //redirection
+					}else{
+						header('location: usermaindashboard.php');
+					
+					}
+	
+}
+?>	
